@@ -1,0 +1,9 @@
+/Binaries
+/Archives
+/build
+/main
+/spiffs_image
+.DS_Store
+.cproject
+.project
+sdkconfig
