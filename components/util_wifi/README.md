@@ -1,0 +1,1 @@
+# The 'util_wifi' component contains utility functions to control WiFi.
