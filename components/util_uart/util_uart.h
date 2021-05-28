@@ -24,9 +24,9 @@
 
 typedef struct uart_char { char character; char flag; }uart_char;
 
-esp_err_t uart0_begin();
+esp_err_t uart0_begin(int);
 
-esp_err_t uart2_begin();
+esp_err_t uart2_begin(int);
 
 void uart0Send(char);
 

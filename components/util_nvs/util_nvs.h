@@ -13,4 +13,12 @@
 
 void InitializeNVS();
 
+esp_err_t NVSStoreBytes(const char *, const char *, uint8_t *, uint8_t);
+
+esp_err_t NVSReadBytes(const char *, const char *, uint8_t *, uint8_t *);
+
+esp_err_t NVSStoreInteger32(const char *, const char *, int32_t);
+
+esp_err_t NVSReadInteger32(const char *, const char *, int32_t *);
+
 #endif /* COMPONENTS_UTIL_NVS_UTIL_NVS_H_ */
