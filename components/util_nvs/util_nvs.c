@@ -22,6 +22,20 @@ void InitializeNVS()
 }
 
 /**
+ * @brief : This API is used to erase the NVS flash
+ *
+ * @param
+ * NONE
+ *
+ * @return
+ * NOTHING
+ */
+void EraseNVS()
+{
+	ESP_ERROR_CHECK(nvs_flash_erase());
+}
+
+/**
  * @brief : This API  is used to store data in NVS Storage.
  *
  * @param

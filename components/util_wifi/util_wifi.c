@@ -176,22 +176,22 @@ static uint8_t wifi_sta_connected = 0;
 /*
  * @brief : SSID of access point to connect to when in station mode
  */
-char sta_ssid[32];
+static char sta_ssid[32];
 
 /*
  * @brief : password of access point to connect to when in station mode
  */
-char sta_password[64];
+static char sta_password[64];
 
 /*
  * @brief : SSID of chip when in softAP mode
  */
-char ap_ssid[32];
+static char ap_ssid[32];
 
 /*
  * @brief : password of chip when in softAP mode
  */
-char ap_password[64];
+static char ap_password[64];
 
 esp_netif_ip_info_t sta_ip_info;
 

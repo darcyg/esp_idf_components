@@ -34,6 +34,10 @@ void uart2Send(char);
 
 void uart0SendBytes(char *, uint16_t);
 
+void uart0Print(char *);
+
+void uart2Print(char *);
+
 void uart0Println(char *);
 
 void uart2SendBytes(char *, uint16_t);
@@ -55,5 +59,9 @@ void uart2InputReset(void);
 void uart0PrintInteger(int );
 
 void uart2PrintInteger(int );
+
+void uart0PrintHex(int );
+
+void uart2PrintHex(int );
 
 #endif /* COMPONENTS_UTIL_UART_UTIL_UART_H_ */

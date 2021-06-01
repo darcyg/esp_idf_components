@@ -13,6 +13,8 @@
 
 void InitializeNVS();
 
+void EraseNVS();
+
 esp_err_t NVSStoreBytes(const char *, const char *, uint8_t *, uint8_t);
 
 esp_err_t NVSReadBytes(const char *, const char *, uint8_t *, uint8_t *);

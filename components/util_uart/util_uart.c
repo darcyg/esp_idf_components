@@ -386,4 +386,126 @@ void uart2PrintInteger(int num)
 	uart2Print(buff);
 }
 
+/**
+ * @brief : This function is used to print an integer to UART0 port in HEX form.
+ *
+ * @param :
+ * 1. int num : The integer to send
+ *
+ * @return :
+ * NOTHING
+ */
+void uart0PrintHex(int num)
+{
+	if(num > 0)
+	{
+		char Buff[25]={0};
+		int8_t ind=0;
+
+		char ch;
+		while( num > 0)
+		{
+			ch = (num & 0X0F);
+			switch(ch)
+			{
+				case 0:
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+				case 5:
+				case 6:
+				case 7:
+				case 8:
+				case 9:
+					Buff[ind++]=ch+48;
+					break;
+
+				case 10:
+				case 11:
+				case 12:
+				case 13:
+				case 14:
+				case 15:
+					Buff[ind++]=ch+55;
+					break;
+			}
+			num=num>>4;
+		}
+
+		Buff[ind++]='X';
+		Buff[ind]='0';
+
+		for(;ind>=0;ind--)
+		{
+			uart0Send(Buff[ind]);
+		}
+	}
+	else if(num==0)
+	{
+		uart0Print("0X00");
+	}
+}
+
+/**
+ * @brief : This function is used to print an integer to UART2 port in HEX form.
+ *
+ * @param :
+ * 1. int num : The integer to send
+ *
+ * @return :
+ * NOTHING
+ */
+void uart2PrintHex(int num)
+{
+	if(num > 0)
+	{
+		char Buff[25]={0};
+		int8_t ind=0;
+
+		char ch;
+		while( num > 0)
+		{
+			ch = (num & 0X0F);
+			switch(ch)
+			{
+				case 0:
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+				case 5:
+				case 6:
+				case 7:
+				case 8:
+				case 9:
+					Buff[ind++]=ch+48;
+					break;
+
+				case 10:
+				case 11:
+				case 12:
+				case 13:
+				case 14:
+				case 15:
+					Buff[ind++]=ch+55;
+					break;
+			}
+			num=num>>4;
+		}
+
+		Buff[ind++]='X';
+		Buff[ind]='0';
+
+		for(;ind>=0;ind--)
+		{
+			uart2Send(Buff[ind]);
+		}
+	}
+	else if(num==0)
+	{
+		uart2Print("0X00");
+	}
+}
+
 
