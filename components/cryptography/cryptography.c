@@ -70,8 +70,6 @@ char decryptAES_ECB(const char * key, const char * data, uint32_t data_len, char
 {
 	if( data_len % 16 != 0 || data_len > buff_len )return 0;
 
-	uart0Println("Decrypting");
-
 	mbedtls_aes_context aes;
 	mbedtls_aes_setkey_dec( &aes, (const unsigned char*) key, strlen(key) * 8 );
 

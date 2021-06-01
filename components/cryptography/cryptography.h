@@ -11,7 +11,6 @@
 #include <mbedtls/aes.h>
 #include <string.h>
 
-#include "util_uart.h"
 
 char encryptAES_ECB(const char *, const char *, uint32_t, char *, uint32_t *);
 
