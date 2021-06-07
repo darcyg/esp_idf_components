@@ -9,11 +9,13 @@
 #define COMPONENTS_CRYPTOGRAPHY_CRYPTOGRAPHY_H_
 
 #include <mbedtls/aes.h>
+#include <mbedtls/md.h>
 #include <string.h>
-
 
 char encryptAES_ECB(const char *, const char *, uint32_t, char *, uint32_t *);
 
 char decryptAES_ECB(const char *, const char *, uint32_t, char *, uint32_t);
+
+char hashMD5(const unsigned char *, unsigned char *);
 
 #endif /* COMPONENTS_CRYPTOGRAPHY_CRYPTOGRAPHY_H_ */

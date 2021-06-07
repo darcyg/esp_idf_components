@@ -18,6 +18,8 @@
  * 5. uint32_t * buff_len : Pointer to variable containing size of output buff, number of bytes in encrypted data will be stored in this variable
  *
  * @return : char
+ *
+ * @note : If the input data does not 'multiple of 16' bytes then, 0s are padded in the end.
  */
 char encryptAES_ECB(const char * key, const char * data, uint32_t data_len, char * buff, uint32_t * buff_len)
 {
@@ -65,6 +67,9 @@ char encryptAES_ECB(const char * key, const char * data, uint32_t data_len, char
  * 5. uint32_t buff_len : Size of output buff
  *
  * @return : char
+ * '1' success
+ * '0' failed
+ *
  */
 char decryptAES_ECB(const char * key, const char * data, uint32_t data_len, char * buff, uint32_t buff_len)
 {
@@ -77,6 +82,51 @@ char decryptAES_ECB(const char * key, const char * data, uint32_t data_len, char
 	{
 		if( mbedtls_aes_crypt_ecb(&aes, MBEDTLS_AES_DECRYPT, (const unsigned char*)(data+ i*16), (unsigned char *)(buff+ i*16) ) != 0 ) return 0;
 	}
+	return 1;
+}
+
+
+/**
+ * @brief : This API is used to hash a plain text string using MD5 algorithm
+ *
+ * @params :
+ * 1. const unsigned char * text : NULL terminated data string
+ * 2. char * buff : Pointer to array where the DIGEST will be stored
+ *
+ * @returns : char
+ * '1' Success
+ * '0' Failed
+ */
+char hashMD5(const unsigned char * text, unsigned char * buff)
+{
+	unsigned char output[MBEDTLS_MD_MAX_SIZE];
+
+	const mbedtls_md_info_t *md_info = mbedtls_md_info_from_type(MBEDTLS_MD_MD5);
+
+	mbedtls_md_context_t ctx;
+
+	mbedtls_md_init(&ctx);
+
+	int ret = mbedtls_md_init_ctx(&ctx, md_info);
+	if (ret != 0)
+	{
+	    return 0;
+	}
+
+	mbedtls_md_starts(&ctx);
+
+	mbedtls_md_update(&ctx, text, strlen((char *)text));
+
+	mbedtls_md_finish(&ctx, output);
+
+	mbedtls_md_free(&ctx);
+
+	//uart0Println("DIGEST");
+
+	//LOG_AS_HEX(output, MBEDTLS_MD_MAX_SIZE);
+
+	memcpy(buff, output, 16);
+
 	return 1;
 }
 
