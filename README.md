@@ -41,4 +41,4 @@ For example, lets say you have to use the `util_uart` component in your project 
 * `util_nvs` : Utility functions for accessing the NVS storage
 * `file_manager` : Utility functions for accessing spiffs storage
 * `cryptography` : Utility function for performing common cryptographic operations
-* `vispr` : Implement `[vispr](https://github.com/parmAshu/vispr.git)` protocol using this component
+* `vispr` : Implement [vispr](https://github.com/parmAshu/vispr.git) protocol using this component
