@@ -1,4 +1,4 @@
-<img src="images/espressif-logo.png" style="display: inline; width: 200; height: 200; margin: auto;" class="logo">
+<img src="images/espressif-logo.png" style="display: inline; width: 50; height: 50; margin: auto;" class="logo">
 
 ---
 
@@ -10,7 +10,7 @@ This project is aimed at providing utility libraries that are built upon ESP-IDF
 
 ### Structure of repository
 
-<img src="images/repository-structure.png" style="height: 400; margin: auto;">
+<img src="images/repository-structure.png" style="height: 200; margin: auto;">
 
 ---
 
@@ -21,7 +21,7 @@ This project is aimed at providing utility libraries that are built upon ESP-IDF
 
 For example, lets say you have to use the `util_uart` component in your project then you will have to do the following :
 
-<img src="images/how-to-use.png" style="height: 400; margin: auto;">
+<img src="images/how-to-use.png" style="height: 200; margin: auto;">
 <br/>
 
 ---
@@ -29,7 +29,7 @@ For example, lets say you have to use the `util_uart` component in your project 
 ### General Structure of an ESP-IDF project
 
 
-<img src="images/project-structure.png" style="height: 400; margin: auto;">
+<img src="images/project-structure.png" style="height: 200; margin: auto;">
 <br/>
 
 ---
